@@ -11,13 +11,15 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_definitions(-DRASP_MEMORY_DEBUG)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/memory)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/list)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/unity)
 
 add_subdirectory(src/memory)
+add_subdirectory(src/list)
 
 # specify the directory where your test files are
 add_subdirectory(test)
 
 add_executable(HelloWorld main.c)
 
-target_link_libraries(HelloWorld rasp_mem)
+target_link_libraries(HelloWorld rasp_mem rasp_list)
